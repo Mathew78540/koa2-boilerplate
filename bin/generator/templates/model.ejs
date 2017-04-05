@@ -1,0 +1,21 @@
+import mongoose, { Schema } from 'mongoose';
+import Promise from 'bluebird';
+import mongooseTimestamp from 'mongoose-timestamp';
+import mongoosePaginate from 'mongoose-paginate';
+import mongooseUniqueValidator from 'mongoose-unique-validator';
+
+// Schema
+const <%=modelName.toLowerCase()%>Schema = new Schema({
+});
+
+// Plugins
+<%=modelName.toLowerCase()%>Schema.plugin(mongooseUniqueValidator);
+<%=modelName.toLowerCase()%>Schema.plugin(mongooseTimestamp);
+<%=modelName.toLowerCase()%>Schema.plugin(mongoosePaginate);
+
+// Model
+const model = mongoose.model('<%=modelName%>', <%=modelName.toLowerCase()%>Schema);
+Promise.promisifyAll(model);
+Promise.promisifyAll(model.prototype);
+
+export default model;

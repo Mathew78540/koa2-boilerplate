@@ -1,0 +1,51 @@
+<% if (createModel) { %>import <%= modelName %> from '../../models/<%= modelName.toLowerCase() %>'; <% } %>
+
+/**
+ * <%= modelName %> Controller
+ */
+class <%=modelName%>Ctrl {
+  /**
+   * GET /<%= serviceName %>/
+   */
+  async list(ctx) {
+    <% if (createModel) { %>const { query } = ctx;
+
+    ctx.body = await <%= modelName %>.paginate({}, query); <% } else { %>ctx.body = { message: 'Hello <%= serviceName %>' }; <% } %>
+  }
+  /**
+   * GET /<%= serviceName %>/:id
+   */
+  async get(ctx) {
+   <% if (createModel) { %>ctx.body = ctx.state.<%= modelName.toLowerCase() %>; <% } else { %>ctx.body = { message: 'Hello <%= serviceName %>' }; <% } %>
+  }
+
+  /**
+   * POST /<%= serviceName %>
+   */
+  async post(ctx) {
+    ctx.body = { message: 'Hello <%= serviceName %>' };
+  }
+
+  /**
+   * PUT /<%= serviceName %>/:id
+   */
+  async put(ctx) {
+    ctx.body = { message: 'Hello <%= serviceName %>' };
+  }
+
+  /**
+   * DEL /<%= serviceName %>/:id
+   */
+  async del(ctx) {
+    ctx.body = { message: 'Hello <%= serviceName %>' };
+  }
+
+  /**
+   * PATCH /<%= serviceName %>/:id
+   */
+  async patch(ctx) {
+    ctx.body = { message: 'Hello <%= serviceName %>' };
+  }
+}
+
+export default new <%=modelName%>Ctrl;

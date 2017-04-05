@@ -1,0 +1,14 @@
+import <%=modelName%> from '../../models/<%=modelName.toLowerCase()%>';
+
+/**
+ * Set in the context the <%=modelName.toLowerCase()%>
+ */
+export const set<%=modelName%>InCtx = async (id, ctx, next) => {
+  ctx.state.<%=modelName.toLowerCase()%> = await <%=modelName%>.findOne({ _id: id });
+
+  if (!ctx.state.user) {
+    return ctx.boom.notFound('<%=modelName%> undefined', { id });
+  }
+
+  return await next();
+};

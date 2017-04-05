@@ -1,0 +1,18 @@
+import koaRouter from 'koa-router';
+import Controller from './<%=serviceName%>.controller';
+import {
+  set<%=modelName%>InCtx,
+} from './<%=serviceName%>.requests';
+
+/**
+ * Routes
+ */
+export default koaRouter()
+  .prefix('/<%=serviceName%>')
+  .param('id', set<%=modelName%>InCtx)
+    .get('/', Controller.list)
+    .get('/:id', Controller.get)
+    .post('/', Controller.post)
+    .put('/:id', Controller.put)
+    .del('/:id', Controller.del)
+    .patch('/:id', Controller.patch);
