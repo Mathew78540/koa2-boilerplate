@@ -10,7 +10,7 @@ const routes = requireAll({
 });
 
 const apiRouter = koaRouter()
-  .get('/', ctx => ctx.body = 'Welcome on Seekube API V2')
+  .get('/', ctx => ctx.body = 'Welcome on Koa2 Boilerplate')
   .get('/healthz', ctx => ctx.status = 200);
 
 Object.keys(routes).forEach(index => {
