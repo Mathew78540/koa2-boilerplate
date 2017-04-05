@@ -47,3 +47,6 @@ db
 .config
 .v8*
 .babel.json
+
+# Mac
+.DS_Store
