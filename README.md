@@ -1,25 +1,18 @@
-# Seekube V2 : API
+# Koa2 Boilerplate
 
-Simple Koa 2 starter.
-The purpose is to include the minimum Babel plugins required to ensure a fast runtime transformation (useful when using nodemon).
+Simple Koa 2 boilerplate.
 
-_Including :_ 
-- Koa router
-- Koa Cors
-- Koa BodyParser
-- Koa Logger
-- Koa Helmet
+Including :
+- Koa 2
 - Mongoose
-- Mongoose Paginate
-- Mongoose timestamp
-- Mongoose UniqueValidator
+- Ava
 
 ## Requirement
 We use docker, so please download the last version.
 
 ## Usage
 ```
-$ git clone git@github.com:Seekube/seekube-v2-api.git
+$ git clone git@github.com:Mathew78540/koa2-boilerplate.git
 
 $ docker-compose up
 ```
