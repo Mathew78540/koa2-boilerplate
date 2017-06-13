@@ -1,11 +1,18 @@
 # Koa2 Boilerplate
 
-Simple Koa 2 boilerplate.
+Simple Koa 2 starter.
+The purpose is to include the minimum Babel plugins required to ensure a fast runtime transformation (useful when using nodemon).
 
-Including :
-- Koa 2
+_Including :_ 
+- Koa router
+- Koa Cors
+- Koa BodyParser
+- Koa Logger
+- Koa Helmet
 - Mongoose
-- Ava
+- Mongoose Paginate
+- Mongoose timestamp
+- Mongoose UniqueValidator
 
 ## Requirement
 We use docker, so please download the last version.
