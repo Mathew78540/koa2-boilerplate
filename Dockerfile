@@ -1,4 +1,4 @@
-FROM node:7.8-alpine
+FROM node:8.1-alpine
 
 # Maintainer
 MAINTAINER Mathieu Le Tyrant, mathieu.letyrant@gmail.com
@@ -14,6 +14,7 @@ WORKDIR $HOME
 
 # Copy package
 COPY package.json $HOME
+COPY npm-shrinkwrap.json $HOME
 
 # Install dependencies
 RUN npm install
